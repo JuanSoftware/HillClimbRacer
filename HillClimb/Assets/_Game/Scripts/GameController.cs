@@ -36,4 +36,10 @@ public class GameController : MonoBehaviour
         float distancia = player.transform.position.x - startPoint.position.x;
         return distancia;
     }
+    public float UpdateFuel()
+    {
+        float fuel = player.GetComponent<VehicleController>().fuel;
+
+        return fuel;
+    }
 }

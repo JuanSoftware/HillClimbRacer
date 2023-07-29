@@ -7,8 +7,7 @@ public class VehicleController : MonoBehaviour
     [SerializeField]
     private Rigidbody2D backTire, frontTire, myRB;
 
-    [SerializeField]
-    private float fuel;
+    public float fuel;
 
     [SerializeField]
     private float speed, carTorque, fuelComsuption;
