@@ -16,6 +16,7 @@ public class GameController : MonoBehaviour
     {
         player.transform.position = startPoint.position;
         CalculateDistance();
+        CalculatePlayerDistance();
     }
 
     // Update is called once per frame
@@ -32,7 +33,7 @@ public class GameController : MonoBehaviour
 
     public float CalculatePlayerDistance()
     {
-        float distance = player.transform.position.x - startPoint.position.x;
-        return distance;
+        float distancia = player.transform.position.x - startPoint.position.x;
+        return distancia;
     }
 }

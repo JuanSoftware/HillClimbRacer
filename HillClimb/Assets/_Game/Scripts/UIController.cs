@@ -16,12 +16,12 @@ public class UIController : MonoBehaviour
     }
     void Start()
     {
-        txtDistance.text = gameController.CalculatePlayerDistance().ToString("0") + " / " + gameController.CalculateDistance().ToString("0");
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        txtDistance.text = gameController.CalculatePlayerDistance().ToString("0") + " / " + gameController.CalculateDistance().ToString("0");
     }
 }
