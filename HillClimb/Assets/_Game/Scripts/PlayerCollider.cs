@@ -22,5 +22,14 @@ public class PlayerCollider : MonoBehaviour
             Debug.Log("Voce venceu!");
             target.gameObject.SetActive(false);
         }
+        else if (target.gameObject.CompareTag("Coin"))
+        {
+            GameController tempGameController = FindObjectOfType<GameController>();
+            tempGameController.curretScore += target.GetComponent<Coin>().value;
+            target.gameObject.SetActive(false);
+
+            UIController tempUIController = FindObjectOfType<UIController>();
+            tempUIController.txtCoins.text = tempGameController.curretScore.ToString();
+        }
     }
 }

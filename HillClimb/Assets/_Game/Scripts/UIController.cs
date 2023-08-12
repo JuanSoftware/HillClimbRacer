@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class UIController : MonoBehaviour
 {
-    public TMP_Text txtDistance;
+    public TMP_Text txtDistance, txtCoins;
 
     private GameController gameController;
 

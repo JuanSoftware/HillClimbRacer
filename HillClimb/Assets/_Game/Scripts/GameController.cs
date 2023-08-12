@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -8,6 +9,12 @@ public class GameController : MonoBehaviour
     private GameObject player;
     [SerializeField]
     private Transform startPoint, endPoint;
+
+    public int curretScore;
+
+    public bool gasBtnPressed, brakeBtnPressed, gameOver;
+
+    public GameObject fuelWarning;
     void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -41,5 +48,27 @@ public class GameController : MonoBehaviour
         float fuel = player.GetComponent<VehicleController>().fuel;
 
         return fuel;
+    }
+
+    public IEnumerator GameOver()
+    {
+        gameOver = true;
+        if (gameOver)
+        {
+            gasBtnPressed = false;
+            brakeBtnPressed = false;
+            fuelWarning.SetActive(false);
+
+            //panel gameover
+        }
+
+        yield return new WaitForSeconds(4f);
+        fuelWarning.SetActive(false);
+
+        //panel gameover
+
+        yield return new WaitForSeconds(8f);
+        string name = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(name);
     }
 }
